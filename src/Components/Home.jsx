@@ -7,15 +7,15 @@ function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/users')
+    axios.get('http://localhost:3001/getUsers')
       .then(res => setData(res.data))
       .catch(err => console.log(err));
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (_id) => {
     const confirm = window.confirm("would you like to delete")
     if (confirm) {
-      axios.delete('http://localhost:3000/users/' + id)
+      axios.delete(`http://localhost:3001/deleteUser/${_id}`)
         .then(res => {
           console.log('Deleted User:', res.data);
           navigate('/');
@@ -60,9 +60,9 @@ function Home() {
                   <td>{d.phone}</td>
                   {/* <td>{d.username}</td> */}
                   <td>
-                    <Link to={`/read/${d.id}`} className='btn btn-sn btn-info me-2'>Read</Link>
-                    <Link to={`/update/${d.id}`} className='btn btn-sn btn-primary me-2'>Edit</Link>
-                    <button onClick={() => handleDelete(d.id)} className='btn btn-sn btn-danger'>Delete</button>
+                    <Link to={`/read/${d._id}`} className='btn btn-sn btn-info me-2'>Read</Link>
+                    <Link to={`/update/${d._id}`} className='btn btn-sn btn-primary me-2'>Edit</Link>
+                    <button onClick={() => handleDelete(d._id)} className='btn btn-sn btn-danger'>Delete</button>
 
                   </td>
                 </tr>

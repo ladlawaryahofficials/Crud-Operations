@@ -15,7 +15,8 @@ function Create() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/users', values)
+   axios.post('http://localhost:3001/createUser', values) // ✅
+
       .then(res => {
         console.log(res);
         navigate('/')
@@ -27,6 +28,11 @@ function Create() {
       <div className='w-50 border bg-white shadow px-5 pt-3 pb-5 rounded'>
         <h1>Add a User</h1>
         <form onSubmit={handleSubmit}>
+          <div className='mb-2'>
+            <label htmlFor='ID'>ID:</label>
+            <input type='text' name='ID' className='form-control' placeholder='Enter ID' required
+              onChange={e => setValues({ ...values, name: e.target.value })} />
+          </div>
           <div className='mb-2'>
             <label htmlFor='name'>Name:</label>
             <input type='text' name='name' className='form-control' placeholder='Enter Name' required
