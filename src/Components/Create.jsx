@@ -39,7 +39,7 @@ function Create() {
               onChange={e => setValues({ ...values, email: e.target.value })} />
           </div>
           <div className='mb-3'>
-            <label htmlFor='email'>Phone:</label>
+            <label htmlFor='phone'>Phone:</label>
             <input type='text' name='phone' className='form-control' placeholder='Enter Phone' required
               onChange={e => setValues({ ...values, phone: e.target.value })} />
           </div>
