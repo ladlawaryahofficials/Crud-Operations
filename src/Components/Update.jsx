@@ -21,7 +21,7 @@ function Update() {
         setValues(res.data)
       )
       .catch(err => console.log(err));
-  },[]);
+  },[id]);
   const navigate = useNavigate();
   const handleUpdate = (event) => {
     event.preventDefault();

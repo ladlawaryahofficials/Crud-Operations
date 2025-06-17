@@ -29,11 +29,6 @@ function Create() {
         <h1>Add a User</h1>
         <form onSubmit={handleSubmit}>
           <div className='mb-2'>
-            <label htmlFor='ID'>ID:</label>
-            <input type='text' name='ID' className='form-control' placeholder='Enter ID' required
-              onChange={e => setValues({ ...values, name: e.target.value })} />
-          </div>
-          <div className='mb-2'>
             <label htmlFor='name'>Name:</label>
             <input type='text' name='name' className='form-control' placeholder='Enter Name' required
               onChange={e => setValues({ ...values, name: e.target.value })} />
