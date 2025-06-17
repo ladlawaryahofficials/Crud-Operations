@@ -42,7 +42,7 @@ function Home() {
         <table className='table table-striped'>
           <thead>
             <tr>
-              <th>ID</th>
+              {/* <th>ID</th> */}
               <th>Name</th>
               <th>Email</th>
               <th>Phone</th>
@@ -54,7 +54,7 @@ function Home() {
             {
               data.map((d, i) => (
                 <tr key={i}>
-                  <td>{d.id}</td>
+                  {/* <td>{d.id}</td> */}
                   <td>{d.name}</td>
                   <td>{d.email}</td>
                   <td>{d.phone}</td>
